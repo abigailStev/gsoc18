@@ -14,8 +14,7 @@ ccf_array *= (2.0 / np.float(n_bins) / ref_rms)
 
 ## Compute the standard error on each ccf bin from the segment-to-segment
 ## variations.
-mean_ccf = np.mean(ccf_array, axis=2)
-ccf_resid = (ccf_array.T - mean_ccf.T).T
+ccf_resid = (ccf_array.T - ccf_avg.T).T
 
 ## Eqn 2.3 from S. Vaughan 2013, "Scientific Inference"
 sample_var = np.sum(ccf_resid**2, axis=2) / (meta_dict['n_seg'] - 1)
