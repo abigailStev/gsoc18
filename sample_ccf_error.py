@@ -1,3 +1,6 @@
+# Here we assume that cs_array has the dimensions (n_bins, n_chans, n_seg)
+# Where n_chans is the number of channels of interest
+
 ## cs_array has been filtered before this step
 cs_avg = np.mean(cs_array, axis=-1)
 
